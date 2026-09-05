@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #0f131c;
+  --canvas-dim: #0a0e16;
+  --surface: #181c24;
+  --surface-elevated: #1c2028;
+  --surface-hover: #262a33;
+  --border: #2a2f3a;
+  --teal: #0df2c9;
+  --teal-dim: #00e0b9;
+  --teal-muted: #4fdbc8;
+  --red: #f43f5e;
+  --amber: #f59e0b;
+  --green: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  background-color: var(--canvas);
+  color: #dfe2ee;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas-dim);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4050;
+}
+
+/* Font families */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Tab transition */
+.tab-content {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Teal glow effects */
+.teal-glow {
+  box-shadow: 0 0 20px rgba(13, 242, 201, 0.15);
+}
+
+.teal-glow-strong {
+  box-shadow: 0 0 30px rgba(13, 242, 201, 0.25), 0 0 60px rgba(13, 242, 201, 0.1);
+}
+
+/* Metric card hover */
+.metric-card {
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.metric-card:hover {
+  border-color: rgba(13, 242, 201, 0.3);
+  background-color: var(--surface-hover);
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--teal);
+  color: var(--canvas);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+.btn-primary:hover {
+  background: var(--teal-dim);
+  transform: scale(1.01);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #f8fafc;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+.btn-secondary:hover {
+  background: var(--surface-elevated);
+  border-color: #3a4050;
+}
+
+/* Chip styles */
+.chip-recovered {
+  background: rgba(13, 242, 201, 0.1);
+  color: var(--teal);
+  border: 1px solid rgba(13, 242, 201, 0.25);
+}
+.chip-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(amber);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.chip-failed {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--red);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+.chip-escalated {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--red);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+
+/* Progress bar */
+.progress-bar-bg {
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--teal), var(--teal-muted));
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
