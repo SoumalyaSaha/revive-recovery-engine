@@ -60,24 +60,27 @@ on the Overview tab to execute the recovery pipeline against the mock
 transaction dataset.
 
 ## Project structure
+
+```
 revive-app/
-├── assets/ # source video asset
+├── assets/           # source video asset
 ├── backend/
-│ └── src/
-│ ├── engine.ts # classify → decide → comply → execute pipeline
-│ ├── mock-data.ts # mock transaction dataset
-│ ├── types.ts
-│ └── index.ts # Express server + API routes
+│   └── src/
+│       ├── engine.ts      # classify → decide → comply → execute pipeline
+│       ├── mock-data.ts   # mock transaction dataset
+│       ├── types.ts
+│       └── index.ts       # Express server + API routes
 └── frontend/
-└── src/
-├── components/
-│ ├── Navbar.tsx
-│ ├── OverviewTab.tsx
-│ ├── BreakdownTab.tsx
-│ ├── AuditTrailTab.tsx
-│ └── ScrollScrubVideo.tsx
-├── api.ts
-└── App.tsx
+    └── src/
+        ├── components/
+        │   ├── Navbar.tsx
+        │   ├── OverviewTab.tsx
+        │   ├── BreakdownTab.tsx
+        │   ├── AuditTrailTab.tsx
+        │   └── ScrollScrubVideo.tsx
+        ├── api.ts
+        └── App.tsx
+```
 
 
 ## API
